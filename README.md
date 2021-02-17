@@ -78,6 +78,20 @@ Now, run `:PlugInstall` (also inside the vim editor). This will install all the 
 
 There are some setup you need to perform on your computer to have all the packages working correctly.
 
+There is a good machine learning based code auto completion. You need `cquery` for C++ completion.
+
+See https://github.com/cquery-project/cquery/wiki/Building-cquery
+
+```
+git clone --recursive https://github.com/cquery-project/cquery.git
+cd cquery
+git submodule update --init
+mkdir build && cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+cmake --build .
+cmake --build . --target install
+```
+
 ### Done
 
 That's should be it. Enjoy vim!
